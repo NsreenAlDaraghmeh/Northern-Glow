@@ -1,0 +1,649 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        /* Global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header section styles */
+        header {
+            position: relative;
+            height: 400px;
+        }
+
+        .header-image {
+            background-image: url(ramadan/11.gif);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 400px;
+        }
+
+        .header-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+            .header-text h1 {
+                font-size: 48px;
+                margin-bottom: 20px;
+            }
+
+        button {
+            background-color: burlywood;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top:320px;
+        }
+
+        /* Blog section styles */
+        .blog-section {
+            padding: 50px 0;
+            background-color: #f5f5f5;
+            margin: 0 auto;
+        }
+
+
+        .section-heading {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+
+   
+        .breadcrumb {
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+            list-style: none;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+
+        .breadcrumb-item + .breadcrumb-item::before {
+            display: inline-block;
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+            color: #6c757d;
+            content: "/";
+        }
+
+        .breadcrumb-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: #6c757d;
+        }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cards_item {
+            display: flex;
+            padding: 1rem;
+        }
+
+        .card_image {
+            height: calc(13*1.2rem);
+            padding: 1.2rem 1.2rem 0;
+            position: relative;
+        }
+
+            .card_image:before,
+            .card_image:after {
+                content: "";
+                position: absolute;
+                width: 20px;
+                left: 60%;
+                top: 0;
+                height: 45px;
+                background: #e6e6e6b8;
+                transform: rotate(45deg);
+            }
+
+            .card_image:after {
+                transform: rotate(-45deg);
+                top: auto;
+                bottom: -22px;
+                left: 40%;
+            }
+
+            .card_image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .cards_item {
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25));
+        }
+
+
+        .card {
+            background-color: white;
+            border-radius: 0.25rem;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            padding-left: 30px;
+            background: repeating-linear-gradient(#0000 0 calc(1.2rem - 1px),#66afe1 0 1.2rem) right bottom /100% 100%,linear-gradient(red 0 0) 30px 0/2px 100% #fff;
+            background-repeat: no-repeat;
+            line-height: 1.2rem;
+            -webkit-mask: radial-gradient(circle .8rem at 2px 50%,#0000 98%,#000)0 0/100% 2.4rem;
+        }
+
+        .card_content {
+            padding: 1.2rem;
+        }
+
+        h2.card_title, p {
+            margin: 1.2rem 0;
+        }
+
+        h2.card_title {
+            font-size: 1.3em;
+        }
+
+        body {
+            font-family: monospace;
+            background: #eee;
+        }
+
+        html {
+            font-size: 15px;
+        }
+        .secfooter {
+            color: white;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            height: 400px;
+            justify-content: space-around;
+            background-size: cover;
+            background-position: center;
+            background-image: url('image/half-moon-4900302_1920.jpg');
+        }
+
+        .secfootericon {
+            margin-top: 30px;
+            display: block;
+            color: #f5f6f8;
+            text-align: center;
+            font-size: xx-large;
+            height: 20px;
+            text-decoration: none;
+            justify-content: start;
+            margin-top: 50px;
+        }
+
+            .secfootericon a {
+                text-decoration: none;
+                color: #f5f6f8;
+            }
+
+        .footerlist {
+            text-align: center;
+        }
+
+            .footerlist ul {
+                text-decoration: none;
+                list-style: none;
+                font-size: 25px;
+                text-align: left;
+            }
+
+        @media only screen and (min-device-width: 0px) and (max-device-width: 480px) {
+            .secfooter {
+                display: grid;
+                grid-template-columns: auto;
+                height: 1000px;
+            }
+
+                .secfooter icon {
+                    font-size: 20px;
+                }
+
+            .secfootericon {
+                margin: 0;
+            }
+
+            .footerGalary {
+                display: grid;
+                justify-content: space-between;
+                grid-template-columns: auto auto;
+            }
+
+                .footerGalary img {
+                    width: 50px;
+                    height: 50px;
+                }
+
+            .footerlist {
+                text-align: center;
+            }
+
+                .footerlist ul {
+                    text-decoration: none;
+                    list-style: none;
+                    font-size: 25px;
+                    text-align: left;
+                }
+        }
+
+        @media only screen and (min-device-width: 481px) and (max-device-width: 680px) {
+            .secfooter {
+                display: grid;
+                grid-template-columns: auto auto;
+                height: 1000px;
+                font-size: 10px;
+            }
+
+                .secfooter icon {
+                    font-size: 10px;
+                }
+
+            .secfootericon {
+                margin: 0;
+            }
+        }
+
+        .footerlist {
+            text-align: center;
+        }
+
+            .footerlist ul {
+                text-decoration: none;
+                list-style: none;
+                font-size: 25px;
+                text-align: left;
+            }
+
+        .footerGalary {
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: auto auto auto;
+            gap: 10px;
+        }
+
+            .footerGalary img {
+                width: 80px;
+                height: 80px;
+            }
+            /* header section */
+        .nav-container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 20px 0px;
+/*            position: fixed;
+*/            right: 0px;
+            left: 0px;
+            background-color: white;
+            z-index: 10;
+        }
+
+            header .logo {
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 2em;
+            }
+
+                header .logo span {
+                    color: var(--primarycolor);
+                }
+
+            header .nav-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+            nav ul li {
+            }
+
+                nav ul li a {
+                    text-decoration: none;
+                    color: black;
+                    padding: 0px 20px;
+                    transition: .3s;
+                }
+
+                    nav ul li a:hover {
+                        color: var(--primarycolor)
+                    }
+
+        /* burger munu  */
+
+        .check {
+            display: none;
+        }
+
+        .menu {
+            display: none;
+            font-size: 40px;
+            color: var(--primarycolor);
+            cursor: pointer;
+        }
+
+
+        @media (max-width : 768px) {
+            nav {
+                display: none;
+            }
+
+            .menu {
+                display: block;
+                position: absolute;
+                right: 30px;
+                top: 20px;
+            }
+
+            .check:checked + nav {
+                display: block;
+                position: absolute;
+                top: 80px;
+                left: 0px;
+                width: 100%;
+                background-color: rgb(255, 255, 255);
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+                nav ul li {
+                    padding: 10px 0px;
+                    margin-bottom: 1px;
+                    border-bottom: 1px solid var(--primarycolor);
+                    transition: .3s;
+                }
+
+                    nav ul li:hover {
+                        padding-left: 4px;
+                    }
+        }
+    
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Blog about Ramadan</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- Header section -->
+        <header>
+            <div class="nav-container">
+                <div class="logo"><img src="ramadan/wew (1).png" width="200"></div>
+                <label for="c"><i class="fa-solid fa-bars menu"></i></label>
+                <input type="checkbox" id="c" class="check">
+                <nav>
+                    <ul>
+                        <li><a href="#edu">Home</a></li>
+                        <li><a href="#skills">Ramadan Recips</a></li>
+                        <li><a href="#cources">Ramadan Advices</a></li>
+                        <li><a href="#ref">Imsakyeh Ramadan </a></li>
+                        <li><a href="#ref">The Night of Destiny </a></li>
+
+                        <li><a href="#ref">Contact Us </a></li>
+
+                    </ul>
+                </nav>
+            </div>
+
+            <!--<nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Library</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Data</li>
+        </ol>
+    </nav>-->
+            <div class="header-image">
+                <div class="header-text">
+                    <!--<h1>Blog about Ramadan</h1>-->
+                    <a href="#blog-section"><button>Read More</button></a>
+                </div>
+            </div>
+        </header>
+       
+        <!-- Blog section -->
+        <section class="blog-section" id="blog-section">
+
+            <div class="main">
+                <ul class="cards">
+                    <li class="cards_item">
+                        <div class="card">
+                            <div class="card_image"><img src="https://assets.codepen.io/652/photo-1468777675496-5782faaea55b.jpeg" alt="mixed vegetable salad in a mason jar. "></div>
+                            <div class="card_content">
+                                <h2 class="card_title">Farmstand Salad &#x2022; 4JD</h2>
+                                <div class="card_text">
+                                    <p>Dig into the freshest veggies of the season! This salad-in-a-jar features a mixture of leafy greens and seasonal vegetables, fresh from the farmer's market.</p>
+                                    <p>Served with your choice of dressing on the side: housemade ranch, cherry balsamic vinaigrette, creamy chipotle, avocado green goddess, or honey mustard. Add your choice of protein for $2 more. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="cards_item">
+                        <div class="card">
+                            <div class="card_image"><img src="https://assets.codepen.io/652/photo-1520174691701-bc555a3404ca.jpeg" alt="a Reuben sandwich on wax paper. "></div>
+                            <div class="card_content">
+                                <h2 class="card_title">Ultimate Reuben &#x2022; 13JD</h2>
+                                <div class="card_text">
+                                    <p>
+                                        All great meals take time, but this one takes it to the next level! More than 650 hours of fermenting, brining, aging, and curing goes into each and every one of our legendary Reuben sandwiches.
+                                    </p>
+                                    <p>Every element of this extraordinary sandwich is handcrafted in our kitchens, from the rye bread baked from our secret recipe to the cave-aged Swiss cheese, right down to the pickle. The only thing we didn't make on the premises is the toothpick ( but we're looking into how to do that). </p>
+                                    <p>This unforgettable sandwich has all of the classic Reuben elements: corned beef, rye bread, creamy Russian dressing, sauerkraut, plus a sweet gherkin pickle. No substitions please!
+                                    <p>
+                                    <p>Add a side of french fries or sweet potato fries for $2 more, or our housemade pub chips for $1.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cards_item">
+                        <div class="card">
+                            <div class="card_image"><img src="https://assets.codepen.io/652/photo-1544510808-91bcbee1df55.jpeg" alt="A side view of a plate of figs and berries. "></div>
+                            <div class="card_content">
+                                <h2 class="card_title">Fig &amp; Berry Plate &#x2022; 10JD</h2>
+                                <div class="card_text">
+                                    <p><span class="note">Seasonal.</span></p>
+                                    <p>A succulent sextet of fresh figs join with a selection of bodacious seasonal berries in this refreshing, shareable dessert.</p>
+                                    <p>Choose your drizzle: cherry-balsamic vinegar, local honey, or housemade chocolate sauce. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="main">
+                <ul class="cards">
+                    <li class="cards_item">
+                        <div class="card">
+                            <div class="card_image"><img src="ramadan/19.jpg" alt="mixed vegetable salad in a mason jar. "></div>
+                            <div class="card_content">
+                                <h2 class="card_title">Sigara Boregi (Crispy Cheese Rolls) &#x2022; 7JD</h2>
+                                <div class="card_text">
+                                    <p>
+                                        The first step is to thaw out your spring roll pastry if its frozen. Do this by placing it at room temperature for a few hours. If you're using phyllo, you'll have to also bring to room temperature from frozen.
+                                        Next, time to make the filling! So easy, just mix together all of the filling ingredients. I suggest you shred your own cheese using a fine shredder, and not use anything pre-shredded (so much added flour that changes the flavour!)
+                                    </p>
+                                    <p>
+                                        Once your spring roll pastry is soft, it's time to roll! Open up the sheets one by one and make sure you keep the rest of them covered so they don't dry out
+                                        Place the pastry sheet like a diamond on your surface, and place about a tablespoon of the filling on the bottom centre.
+                                        Fold the bottom tip over, then create a tight roll and roll half way
+                                        Next, bring up each of the sides and fold them over, making sure you grab around 1.5 inches to secure the cheese in
+                                        Keep rolling it forward then secure it with the glue mixture and you're done!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="cards_item">
+                        <div class="card">
+                            <div class="card_image"><img src="ramadan/20.jpg" alt="a Reuben sandwich on wax paper. "></div>
+                            <div class="card_content">
+                                <h2 class="card_title">Yalanji (Vegetarian Stuffed Grape Leaves) &#x2022; 18JD</h2>
+                                <div class="card_text">
+                                    <p>
+                                        The first step is to open the jar of grape leaves and wash them really well. Most leaves are stored in brine, so the leaves would be very salty if you don't wash them thoroughly. You can then leave them to soak a little bit while you prepare the filling. Sometimes, I'll blanch the leaves if I feel them and find them particularly rough. Blanching will soften and "pre-cook" them so they don't takes ages to cook. I only recommend this step if your leaves are large and feel tough (in which case, find a better brand).
+                                    </p>
+                                    <p>Next, it's time to prepare the filling. It's really easy if you have a food processor. Use it to process the onions, pepper, and parsley until finely chopped. If you don't have a food processor, you can just finely chop by hand. Then finely chop the tomato, and add it with the rest of the vegetables to the washed rice, in a bowl. </p>
+
+                                    <p>Next, to the same bowl, add the rest of the stuffing ingredients: pomegranate molasses, olive oil, the spices, chicken stock, lemon juice, and tomato paste. Mix everything really well using a spoon until combined. You'll find that the mixture is really juicy - that's totally fine!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cards_item">
+                        <div class="card">
+                            <div class="card_image"><img src="ramadan/21.jpg" alt="A side view of a plate of figs and berries. "></div>
+                            <div class="card_content">
+                                <h2 class="card_title"> Kunafa Recipe with Mozzarella Cheese (Easy!) &#x2022; 8JD</h2>
+                                <div class="card_text">
+                                    <p>Make your simple syrup and set it aside to cool. For the Kunafa, start by either grating or chopping up the cheese into small cubes. Then mix it with the can of thick cream and set aside.</p>
+                                    <p>
+                                        Next, prepare your kataifi dough. If it is frozen, make sure that you thaw it overnight in the fridge, and take it out an hour or so before you plan to use it. Open the packaging and break it up using your hand and place it in a food processor. Whizz it a few times until it's finely shredded.
+
+                                        If you don't have a food processor, you can also shred it with your hand. Pour the melted butter on top and use your hands to massage the butter into every strand of dough. Make sure you fully saturate it and incorporate it well! This will ensure it gets extra crispy.
+                                        Next, brush your pan with some of the melted butter and pack it with half of the kataifi dough. I used a 9 inch pan for this recipe; you can use a slightly larger pan and your kunafa will just be less thick, which is fine. Use the back of a cup to really pack in the dough and bring it up along the sides so it forms an edge. Then, spoon in the cheese and cream mixture and evenly spread it out.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+        <div class="secfooter">
+            <div class="footerlist">
+                <h1>Links</h1>
+                <ul class="list-unstyled">
+                    <li>
+                        <a class="text-white">Home</a>
+                    </li>
+
+                    <li>
+                        <a class="text-white">Blog</a>
+                    </li>
+
+                    <li>
+                        <a class="text-white">Contact</a>
+                    </li>
+
+                    <li>
+                        <a class="text-white">About</a>
+                    </li>
+                </ul>
+            </div>
+            <div style="text-align:center;" class="">
+                <h1>Galary</h1>
+                <br />
+                <div class="footerGalary">
+
+                    <a href="#">
+                        <img src="Image/photo1681285133 (10).jpeg" />
+                    </a>
+                    <a href="#">
+                        <img src="Image/photo1681285133 (2).jpeg" />
+                    </a>
+                    <a href="#">
+                        <img src="Image/photo1681285133 (3).jpeg" />
+                    </a>
+                    <a href="#">
+                        <img src="Image/photo1681285637 (1).jpeg" />
+                    </a>
+
+                    <a href="#">
+                        <img src="Image/photo1681285637 (2).jpeg" />
+                    </a>
+                    <a href="#">
+                        <img src="Image/photo1681285637.jpeg" />
+                    </a>
+
+                </div>
+
+            </div>
+            <div class="secfootericon">
+                <br />
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
+                    </svg>
+                    <br />
+                    <br />
+                    <br />
+
+                    <div style="color: aliceblue; font-size:15px;" text-align:center;">
+                        © 2022 Copyright:
+                        <a class="text-white">Northern Gorw</a>
+                    </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+</body>
+</html>
